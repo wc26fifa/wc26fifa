@@ -73,37 +73,6 @@ h1 {
   opacity:0.6;
 }
 
-/* ФЛАГИ */
-.flags {
-  margin-top:30px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-}
-
-.flag {
-  display:flex;
-  align-items:center;
-  gap:8px;
-  background:rgba(255,255,255,0.1);
-  padding:8px 12px;
-  border-radius:8px;
-  font-size:14px;
-  transition:0.3s;
-}
-
-.flag img {
-  width:20px;
-  height:14px;
-  border-radius:3px;
-}
-
-.flag:hover {
-  transform:scale(1.1);
-  background:rgba(0,150,255,0.5);
-}
-
 /* КНОПКА */
 .telegram-btn {
   display:inline-block;
@@ -142,17 +111,6 @@ h1 {
     <div class="box"><div class="number" id="s">0</div><div class="label">СЕК</div></div>
   </div>
 
-  <div class="flags">
-    <div class="flag"><img src="https://flagcdn.com/w20/br.png"> Бразилия</div>
-    <div class="flag"><img src="https://flagcdn.com/w20/ar.png"> Аргентина</div>
-    <div class="flag"><img src="https://flagcdn.com/w20/fr.png"> Франция</div>
-    <div class="flag"><img src="https://flagcdn.com/w20/de.png"> Германия</div>
-    <div class="flag"><img src="https://flagcdn.com/w20/es.png"> Испания</div>
-    <div class="flag"><img src="https://flagcdn.com/w20/pt.png"> Португалия</div>
-    <div class="flag"><img src="https://flagcdn.com/w20/us.png"> США</div>
-    <div class="flag"><img src="https://flagcdn.com/w20/mx.png"> Мексика</div>
-  </div>
-
   <a href="https://t.me/worlldcup2026" target="_blank" class="telegram-btn">
     🚀 Telegram канал
   </a>
@@ -188,3 +146,6 @@ function update() {
 setInterval(update, 1000);
 update();
 </script>
+
+</body>
+</html>
