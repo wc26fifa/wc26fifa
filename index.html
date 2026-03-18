@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>World Cup 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family:'Orbitron',sans-serif;
+  background: radial-gradient(circle at top, #0a1f3d, #000);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+.container {
+  text-align:center;
+  background:rgba(255,255,255,0.05);
+  padding:40px;
+  border-radius:20px;
+  backdrop-filter: blur(15px);
+  box-shadow:0 0 40px rgba(0,150,255,0.3);
+}
+
+h1 {
+  margin-bottom:10px;
+  letter-spacing:2px;
+  text-shadow:0 0 15px #00c6ff;
+}
+
+.subtitle {
+  opacity:0.7;
+  margin-bottom:30px;
+}
+
+#countdown {
+  display:flex;
+  gap:15px;
+  justify-content:center;
+}
+
+.box {
+  background:rgba(255,255,255,0.08);
+  padding:20px;
+  border-radius:12px;
+  min-width:80px;
+  transition:0.3s;
+}
+
+.box:hover {
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 0 20px rgba(0,150,255,0.7);
+}
+
+.number {
+  font-size:28px;
+  font-weight:bold;
+}
+
+.label {
+  font-size:12px;
+  opacity:0.6;
+}
+
+/* ФЛАГИ */
+.flags {
+  margin-top:30px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+.flag {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,0.1);
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.flag img {
+  width:20px;
+  height:14px;
+  border-radius:3px;
+}
+
+.flag:hover {
+  transform:scale(1.1);
+  background:rgba(0,150,255,0.5);
+}
+
+/* КНОПКА */
+.telegram-btn {
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  border-radius:25px;
+  background:linear-gradient(45deg,#0088cc,#00c6ff);
+  color:white;
+  text-decoration:none;
+  box-shadow:0 0 20px rgba(0,200,255,0.7);
+  transition:0.3s;
+}
+
+.telegram-btn:hover {
+  transform:scale(1.1);
+}
+
+.footer {
+  margin-top:20px;
+  font-size:12px;
+  opacity:0.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>WORLD CUP 2026</h1>
+  <div class="subtitle">До старта осталось</div>
+
+  <div id="countdown">
+    <div class="box"><div class="number" id="d">0</div><div class="label">ДНЕЙ</div></div>
+    <div class="box"><div class="number" id="h">0</div><div class="label">ЧАСОВ</div></div>
+    <div class="box"><div class="number" id="m">0</div><div class="label">МИН</div></div>
+    <div class="box"><div class="number" id="s">0</div><div class="label">СЕК</div></div>
+  </div>
+
+  <div class="flags">
+    <div class="flag"><img src="https://flagcdn.com/w20/br.png"> Бразилия</div>
+    <div class="flag"><img src="https://flagcdn.com/w20/ar.png"> Аргентина</div>
+    <div class="flag"><img src="https://flagcdn.com/w20/fr.png"> Франция</div>
+    <div class="flag"><img src="https://flagcdn.com/w20/de.png"> Германия</div>
+    <div class="flag"><img src="https://flagcdn.com/w20/es.png"> Испания</div>
+    <div class="flag"><img src="https://flagcdn.com/w20/pt.png"> Португалия</div>
+    <div class="flag"><img src="https://flagcdn.com/w20/us.png"> США</div>
+    <div class="flag"><img src="https://flagcdn.com/w20/mx.png"> Мексика</div>
+  </div>
+
+  <a href="https://t.me/worlldcup2026" target="_blank" class="telegram-btn">
+    🚀 Telegram канал
+  </a>
+
+  <div class="footer">
+    11 июня 2026
+  </div>
+</div>
+
+<script>
+const target = new Date("2026-06-11T00:00:00").getTime();
+
+function update() {
+  const now = new Date().getTime();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    document.body.innerHTML = "<h1>⚽️ Чемпионат начался!</h1>";
+    return;
+  }
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("d").textContent = d;
+  document.getElementById("h").textContent = h;
+  document.getElementById("m").textContent = m;
+  document.getElementById("s").textContent = s;
+}
+
+setInterval(update, 1000);
+update();
+</script>
